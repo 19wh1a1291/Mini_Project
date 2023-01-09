@@ -1,0 +1,1393 @@
+\documentclass[a4paper,12pt, English]{article}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, linkcolor=blue]{hyperref}
+\usepackage[spanish]{babel}
+% \{spanish}
+\usepackage[utf8]{inputenc}
+\usepackage[svgnames]{xcolor}
+\renewcommand{\baselinestretch}{1.5}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage{sectsty}
+\usepackage{fancyhdr}
+\fancyfoot[C]{}
+\renewcommand{\headrulewidth}{4pt}
+\renewcommand{\footrulewidth}{4pt}
+\sectionfont{\fontsize{17.28}{17.28}\selectfont}
+\usepackage{mathptmx}
+\usepackage[font=small,labelfont=bf]{caption}
+\renewcommand{\figurename}{Figure}
+\usepackage[figurename=Figure]{caption}
+\usepackage{ragged2e}
+\usepackage{multirow}
+\addtolength{\topmargin}{-57pt}
+\addtolength{\oddsidemargin}{92pt}
+\addtolength{\footskip}{25pt}
+\justifying
+
+\usepackage{listings}
+\usepackage{afterpage}
+\pagestyle{plain}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+
+
+\lstset{frame=tb,
+language=R,
+aboveskip=3mm,
+belowskip=3mm,
+showstringspaces=false,
+columns=flexible,
+numbers=none,
+keywordstyle=\color{blue},
+numberstyle=\tiny\color{gray},
+commentstyle=\color{dkgreen},
+stringstyle=\color{mauve},
+breaklines=true,
+breakatwhitespace=true,
+tabsize=3
+}
+
+\usepackage{here}
+
+
+\textheight=24cm
+\textwidth=17cm
+%\topmargin=-1cm
+\oddsidemargin=0cm
+\parindent=0mm
+\pagestyle{plain}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% La siguiente instrucciÃ³n pone el curso automÃ¡ticamente%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{color}
+
+
+\captionsetup[table]{name=Table}
+\global\let\date\relax
+\newcounter{unomenos}
+\setcounter{unomenos}{\number\year}
+\addtocounter{unomenos}{-1}
+\stepcounter{unomenos}
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\hyphenchar\font=-1
+\sloppy
+\begin{document}
+
+\begin{titlepage}
+
+\begin{center}
+\vspace*{-1in}
+
+
+\begin{Large}
+\vspace*{0.1in}
+\textbf{A Mini-Project Report\\on}
+\end{Large}
+\\
+\vspace*{0.1in}
+\textbf{\LARGE Smart Zone Based Vehicle Speed Suggestion Measures
+Using IoT
+ }
+
+%==========================================================================
+\begin{large}
+\textbf{{Submitted in partial fulfillment of the requirements \\
+for the award of degree of}}\\
+\end{large}
+%==========================================================================
+%==========================================================================
+\begin{large}
+{\textbf{BACHELOR OF TECHNOLOGY \\ in\\ Information Technology\\by}}\\
+\end{large}
+%===========================================================================
+
+\textit{\textbf{\large K. Ravalika  (19WH1A1289)}} \\
+\textit{\textbf{\large B. Anusha Reddy (19WH1A1291) }} \\
+\textit{\textbf{\large Bushra Begum (19WH1A1292)}} \\
+\textit{\textbf{\large V. Ramya Sree (19WH1A12A7) }} \\
+%==========================================================================
+\begin{large}
+\textit{\textbf{Under the esteemed guidance of}}\\
+\end{large}
+%==========================================================================
+\textbf{\large \textit {Ms. M. Sudha Rani}}\\
+\textbf{\large \textit {Assistant Professor}}\\
+%==========================================================================
+\begin{center}
+\includegraphics[width=2.8cm]{vishimg.jpeg}
+\end{center}
+%==========================================================================
+
+\begin{large}
+\textbf{Department of Information Technology}\\
+\end{large}
+%==========================================================================
+\begin{Large}
+\textbf{BVRIT HYDERABAD College of Engineering for Women}\\
+\end{Large}
+\begin{normalsize}
+\textbf{ Rajiv Gandhi Nagar, Nizampet Road, Bachupally, Hyderabad – 500090}
+
+%===========================================================================
+\textbf{(Affiliated to Jawaharlal Nehru Technological University Hyderabad)}\\
+
+\textbf{(NAAC ‘A’ Grade \& NBA Accredited- ECE, EEE, CSE \& IT)}\\
+
+\end{normalsize}
+\begin{large}
+\vspace{0.05in}
+\textbf{ January, 2023}\\
+\end{large}
+\end{center}
+\end{titlepage}
+%===========================================================================
+\begin{titlepage}
+\newcommand{\CC}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}}
+\def\CC{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+%===========================DECLARATION=====================================
+\begin{center}
+    \textbf{\large DECLARATION}\\
+\end{center}
+\vspace*{0.2in}
+
+We hereby declare that the work presented in this project entitled “{\textbf{SMART ZONE BASED VEHICLE SPEED SUGGESTION MEASURES
+USING IoT
+}} ” submitted towards completion of the project in IV year I sem of B.Tech IT at “BVRIT HYDERABAD College of Engineering for Women”, Hyderabad is an authentic record of our original work carried out under the esteemed guidance of {\textbf{ Ms. M. Sudha Rani, Assistant Professor}}, Department of IT.
+\newline
+\newline
+\newline
+\newline
+\tab\tab\tab\tab \hspace*{6.0cm}
+ {{K. Ravalika  (19WH1A1289)\\
+ \newline
+\newline
+ \tab\tab\tab\tab \hspace*{6.0cm}
+ B. Anusha Reddy (19WH1A1291) \\
+ \newline
+\newline
+\tab\tab\tab\tab \hspace*{6.0cm}
+ Bushra Begum (19WH1A1292) \\
+ \newline
+\newline
+\tab\tab\tab\tab\hspace*{5.96cm}
+V. Ramya Sree (19WH1A12A7) }} \\
+
+
+
+\end{titlepage}
+%===========================================================================
+%===========================CERTIFICATE=====================================
+\begin{titlepage}
+\vspace*{-0.5in}
+\begin{center}
+\includegraphics[width=2.8cm]{vishimg.jpeg}
+\end{center}
+%===========================================================================
+\begin{center}
+\begin{large}
+\textbf{BVRIT HYDERABAD\\ College of Engineering for Women}\\
+\end{large}
+\begin{footnotesize}
+\textbf{ Rajiv Gandhi Nagar, Nizampet Road, Bachupally, Hyderabad – 500090}\\
+\vspace*{0.1in}
+\textbf{(Affiliated to Jawaharlal Nehru Technological University, Hyderabad)}\\
+\textbf{(NAAC ‘A’ Grade \& NBA Accredited- ECE, EEE, CSE \& IT)}\\
+\end{footnotesize}
+\end{center}
+%===========================================================================
+\begin{center}
+    \textbf{\large CERTIFICATE}\\
+\end{center}
+
+\begin{normalsize}
+
+
+This is to certify that the mini-project report on {\textbf{“SMART ZONE BASED
+VEHICLE SPEED SUGGESTION MEASURES USING IoT”}}is a bonafide work carried out by {\textbf{Ms. {K. Ravalika  (19WH1A1289), B. Anusha Reddy (19WH1A1291),
+ Bushra Begum (19WH1A1292)
+,V. Ramya Sree (19WH1A12A7)
+}} in the partial fulfillment for the award of B.tech degree in \textbf{Information Techonology, BVRIT HYDERABAD College of Engineering for Women, Bachupally, Hyderabad} affiliated to the Jawaharlal Nehru Technological University Hyderabad under my guidance and supervision.The results embodied in the mini-project work have not been submitted to any other university or institute for the award of any degree or diploma.
+\newline
+
+\end{normalsize}
+
+
+\vspace*{0.6in}
+
+
+
+\noindent
+{\begin{normalsize}
+{\textbf{Internal Guide}}
+\end{normalsize}
+}
+\hfill
+{\begin{normalsize}
+{\textbf{Head of the Department}}
+\end{normalsize}
+}\\
+%===========================================================================
+\noindent
+{\begin{normalsize}
+{\textbf{Ms. M. Sudha Rani}}}
+\end{normalsize}
+}
+\hspace{8.5cm}
+{\begin{normalsize}
+{\textbf{Dr. Aruna Rao S L}}
+\end{normalsize}
+}\\
+%===========================================================================
+\noindent
+{\begin{normalsize}
+{\textbf{Assistant Professor}}
+\end{normalsize}
+}
+\hspace{8.43cm}
+{
+\begin{normalsize}
+\textbf{Professor \& HoD}
+\end{normalsize}
+}\\
+%===========================================================================
+\hspace{9cm}
+\noindent
+{\begin{normalsize}
+{\textbf{Department of IT}}
+\end{normalsize}
+}
+\hspace{8.65cm}
+{
+\begin{normalsize}
+{\textbf{Department of IT}}
+\end{normalsize}
+}
+\vspace*{0.4in}
+\begin{center}
+{\textbf{\large External Examiner}}
+\end{center}
+
+
+
+
+\end{titlepage}
+%===========================================================================
+%===========================ACKNOWLEDGEMENT=================================
+\begin{titlepage}
+\begin{center}
+    \textbf{\normalsize \underline{ACKNOWLEDGEMENTS}}\\
+\end{center}
+\vspace*{0.2in}
+\begin{normalsize}
+We would like to express our profound gratitude and thanks to \textbf{Dr. K. V. N. Sunitha, Principal, BVRIT HYDERABAD} for providing the working facilities in the college.\\
+\newline
+Our sincere thanks and gratitude to \textbf{Dr. Aruna Rao S L, Professor \& Head, Department of Information Technology, BVRIT HYDERABAD} for all the timely support, constant guidance and valuable suggestions during the period of our project.\\
+\newline
+We are extremely thankful and indebted to our internal guide \textbf{Ms. M. Sudha Rani, Assistant Professor, Department of IT, BVRIT HYDERABAD} for his constant guidance, encouragement and moral support throughout our project.\\
+\newline
+Finally, we would also like to thank our Project Coordinators {\textbf{Ms K.S Niraja, Assistant Professor, Mr. Ch Anil Kumar, Assistant Professor}}, all the faculty and staff of the Department of IT who helped us directly or indirectly, parents and friends for their cooperation in completing the project work.
+\end{normalsize}
+\newline
+\newline
+\newline
+\newline
+\tab\tab\tab\tab \hspace*{6.0cm}
+ {{K. Ravalika  (19WH1A1289)\\
+ \newline
+\newline
+ \tab\tab\tab\tab \hspace*{6.0cm}
+ B. Anusha Reddy (19WH1A1291) \\
+ \newline
+\newline
+\tab\tab\tab\tab \hspace*{6.0cm}
+ Bushra Begum (19WH1A1292) \\
+ \newline
+\newline
+\tab\tab\tab\tab \hspace*{5.96cm}
+ V. Ramya Sree (19WH1A12A7) }} \\
+ 
+\end{titlepage}
+
+%===========================ABSTRACT========================================
+\begin{titlepage}
+
+\begin{center}
+    \textbf{\Large ABSTRACT}\\
+\end{center}
+
+\begin{normalsize}
+Considering the road transport data inclusive of traffic and accidents, the idea of automatic
+speed control is very crucial since it aims to provide maximum road safety as well as driving
+ease at traffic with the use of technology. In a world where everyone rushes till the nth hour, a
+system like this is mandatory, to automatically control the speed of any vehicle at smart zones
+like schools, hospitals, etc. This indeed envisions a future that is accident-free and stresses the
+importance of road safety and rules beyond human errors and false testimony approval. This
+system is designed in such a way that speed is regulated and confined at the marked smart zones
+with the help of the RF module. At smart zones, the RF transmitter is placed at two ends of the
+premises. The RF receiver in the vehicle receives the signal from the transmitter when entered
+into the zone which occurs due to the frequency match. ECU remapping helps in controlling
+the speed. This happens automatically beyond manual control when the region is committed to
+that particular zone. Once the vehicle leaves the zone, the driver can manually control the speed
+as per the traffic rules.
+\newline
+\newline
+\end{normalsize}\\\\\\\\\\\\\\\\\\\\
+\begin{normalsize}
+\begin{center}
+\textbf{V}
+\end{center}
+\end{normalsize}
+\end{titlepage}
+%=====================LIST-OF-FIGURES======================================
+\begin{titlepage}
+
+\begin{center}
+\vspace{-100cm}
+    \textbf{\large LIST OF FIGURES}\\
+\end{center}
+\\
+\begin{center}
+\begin{normalsize}
+\newline
+     \begin{tabular}{|c|l|c|} 
+     \hline
+     \normalsize\textbf{S.No.} & \normalsize\textbf{Title} & \normalsize\textbf{Page number.} \\
+     \hline
+     3.2.1 & Block diagram of system & 6\\ \hline
+     3.2.2 & Transmitter module & 8\\ \hline
+     3.2.3 & Receiver module & 9\\ \hline
+     3.2.4 & Arduino & 11\\ \hline
+     3.2.5 & 16×2 LCD display  & 12\\ \hline
+     3.2.6 & Power supply & 13\\ \hline
+     3.2.7 & Motor driver & 16\\ \hline
+     3.3.1 & Flow chart & 18\\ \hline
+     4.1.1 & Modules & 19\\ \hline
+     4.1.2 & RF Transmitter and Receiver Circuit Block Diagram & 20\\ \hline
+     4.2.1 & Implementation & 24\\ \hline
+     4.2.2 & Overall system design & 25\\ \hline
+     4.2.3 & Speed limit controller & 26\\ \hline
+     4.2.4 & Over speed detected & 27\\ \hline
+     4.2.5 & Final result & 28\\ \hline
+     \end{tabular}
+    \begin{normalsize}
+    \begin{center}
+    \vspace*{\fill}
+    \textbf{VI}
+    \end{center}
+\end{normalsize}
+\end{normalsize}
+\end{titlepage}
+%===============================================================
+%=====================================Table of Contents===========================================
+\begin{titlepage}
+
+\begin{center}
+\vspace{-100cm}
+    \textbf{\large LIST OF ABBREVIATIONS}\\
+\end{center}
+\\
+\begin{center}
+\begin{normalsize}
+\newline
+     \begin{tabular}{|c|l|c|} 
+     \hline
+     \normalsize\textbf\textbf{Abbreviation} & \normalsize\textbf{Meaning} \\
+     \hline
+     ECU & Engine Control Unit\\ \hline
+     RF & Radio Frequency\\ \hline
+     RFID & Radio Frequency Identification\\ \hline
+     LCD & Liquid Crystal Diode\\ \hline
+     SDC  & Smart Display Control\\ \hline
+     LED & Light Emitting Diode\\ \hline
+     ASK &  Amplitude shifting key\\ \hline
+     \end{tabular}
+    \begin{normalsize}
+    \begin{center}
+    \vspace*{\fill}
+    \textbf{VI}
+    \end{center}
+\end{normalsize}
+\end{normalsize}
+\end{titlepage}
+
+%===============================================================
+%=====================================Table of Contents===========================================
+\newpage
+\begin{titlepage}
+
+\begin{center}
+    \textbf{\Large CONTENTS}\\
+\end{center}
+\vspace*{0.25in}
+
+%===========================================================================
+\noindent 
+{\begin{normalsize}
+\textbf{\tab TOPIC}
+\end{normalsize}
+}
+\hfill 
+{
+\begin{normalsize}
+\textbf{PAGE NO.}
+\end{normalsize}
+}
+%==========================================================================
+\\
+\noindent 
+{\begin{large}
+\textbf{\tab ABSTRACT}
+\end{large}
+}
+{
+\begin{normalsize}
+\tab\hspace*{10.3cm}\textbf{V}
+\end{normalsize}
+}\\
+%==========================================================================
+\noindent 
+{\begin{large}
+\textbf{ \tab LIST OF FIGURES}
+\end{large}
+}
+{
+\begin{normalsize}
+\hspace*{9.7cm}\textbf{VI}
+\end{normalsize}
+}\\
+%==========================================================================
+\noindent 
+{\begin{large}
+\textbf{ \tab LIST OF ABBREVIATIONS}
+\end{large}
+} 
+{
+\begin{normalsize}
+\hspace{7.8cm}\textbf{VII}
+\end{normalsize}
+}\\
+%==========================================================================
+\noindent 
+{\begin{large}
+\textbf{\tab 1. INTRODUCTION}
+\end{large}
+} 
+{
+\begin{large}
+\hspace{9.7cm}\textbf{1}
+\end{large}
+}
+ 
+{\begin{large}
+{\tab\tab 1.1 Objective}
+\end{large}
+}
+{
+\begin{large}
+\hspace{10.55cm}\text{1}
+\end{large}
+}
+
+{\begin{large}
+{\tab\tab 1.2 Problem Definition}
+\end{large}
+}
+{
+\begin{large}
+\hspace{8.58cm}\text{1}
+\end{large}
+}\\
+{\begin{large}
+{\tab\tab 1.3 Aim of the Project }
+\end{large}
+} 
+{
+\begin{large}
+\hspace{8.58cm}\text{2}
+\end{large}
+}
+
+%==============================================================================
+\noindent 
+{\begin{large}
+\textbf{\tab 2. LITERATURE SURVEY}
+\end{large}
+} 
+{
+\begin{large}
+\hspace{8.15cm}\textbf{3}
+\end{large}
+}
+
+{\begin{large}
+{\tab\tab 2.1 Related Work}
+\end{large}
+}
+{
+\begin{large}
+\hspace{9.7cm}\text{3}
+\end{large}
+}
+
+{\begin{large}
+{\tab\tab 2.2 Major Issues}
+\end{large}
+} 
+{
+\begin{large}
+\hspace{9.9cm}\text{4}
+\end{large}
+}\\
+%=============================================================================
+\noindent 
+{\begin{large}
+\textbf{\tab  3. SYSTEM ANALYSIS AND DESIGN }
+\end{large}
+}
+{
+\begin{large}
+\hspace{5.6cm}\textbf{5}
+\end{large}
+}
+
+
+ 
+{\begin{large}
+{\tab\tab3.1 Proposed System}
+\end{large}
+} 
+{
+\begin{large}
+\hspace{9.0cm}\text{5}
+\end{large}
+}
+
+{\begin{large}
+{\tab\tab 3.2 Architecture Design}
+\end{large}
+} 
+{
+\begin{large}
+\hspace{8.35cm}\text{7}
+\end{large}
+}\\
+{\begin{large}
+{\tab\tab 3.3 Flow Chart}
+\end{large}
+}
+{
+\begin{large}
+\hspace{10.0cm}\text{18}
+\end{large}
+}
+ 
+%===================================================================================
+\noindent 
+{\begin{large}
+\textbf{\tab 4. IMPLEMENTATION }
+\end{large}
+} 
+{
+\begin{large}
+\hspace{8.5cm}\textbf{19}
+\end{large}
+}\\
+{\begin{large}
+{\tab\tab 4.1  Modules }
+\end{large}
+}
+{
+\begin{large}
+\hspace{10.3cm}\text{20}
+\end{large}
+}\\
+{\begin{large}
+{\tab\tab 4.2 Results}
+\end{large}
+}
+{
+\begin{large}
+\hspace{10.7cm}\text{24}
+\end{large}
+}
+\\
+%==============================================================================
+%=======================================================================================
+\noindent 
+{\begin{large}
+\textbf{\tab 5. CONCLUSION \& FUTURE ENHANCEMENT}
+\end{large}
+} 
+{
+\begin{large}
+\hspace{3.1cm}\textbf{29}
+\end{large}
+}\\
+\noindent 
+{\begin{large}
+\textbf{\tab  REFERENCES}
+\end{large}
+} 
+{
+\begin{large}
+\hspace{10.55cm}\textbf{31}
+\end{large}
+}
+\end{titlepage}
+%==========================================================================
+
+%==========================================================================
+
+
+\newpage
+
+\pagestyle{fancy}
+\rhead{\footnotesize  Smart Zone Based Vehicle Speed Suggestion Measures}
+\fancyfoot[L]{\footnotesize Department of Information Technology}
+\fancyfoot[R]{\footnotesize\thepage}
+\begin{center}
+\section{\Large INTRODUCTION}
+\end{center}
+\begin{normalsize}
+
+\tabIn Rash driving is one of the major reasons due to which accidents occur. In a current crisis of
+increasing the number of populations leading to serious road traffic is uncontrollable. Being
+in such a critical situation causes dreadful accidents and increasing accident rates. As per the
+stats from the World health organization (WHO), every year the lives of approximately 1.35
+million people are cut short as a result of a road traffic crash. Between 20 and 50 million more
+people suffer non-fatal injuries, with many incurring a disability as a result of their injury. Road
+traffic injuries cause considerable economic losses to individuals, their families, and nations as
+a whole. These losses arise from the value of treatment also as lost productivity for those killed
+or disabled by their injuries, and for relations who got to take the day off work or school to
+worry for the injured. Road traffic crashes cost most countries 3% of their gross domestic
+product. So, there is a much-needed change or upgrade to the current system. In the world of
+the increasing population, there should increase care on road rules and safety. Generally, the
+crowded areas here as per the idea is marked as smart zones. These are mostly to be schools,
+colleges, educational and medical institutes, hospitals, crowded markets, etc. These zones have
+the highest human proximity, crowd, and traffic as far as the road is concerned. So there needs
+to be a systematic solution to ensure the utmost safety at suchzones in the scope of saving
+several unnecessary deaths and injuries due to accidents.
+ \\
+ \\
+ \begin{large}
+\textbf{1.1 Objective}
+\end{large}
+\newline
+\tabIn To design a system which controls the speed of vehicles in Accident prone areas. 
+\\
+\tab The system will inform the driver about the exceeding speed of vehicle and control it automatically if driver doesn’t respond.
+\\
+\\
+\begin{large}
+\textbf{1.2 Problem Definition}
+\end{large}
+\newline
+\tab Over speeding vehicle make lot of nuisance sometimes also leading to loss of lives
+and other damages. Also imposing speed restrictions through sign boards have
+been rendered fruitless wherein the vehicle drivers do not comply with it and
+resulting catastrophic.
+In this project it not only provides speed limitations, it also implements it through
+a controlling mechanism. The project works with RF communication between the
+speed sign post and the vehicle controller system. A motor is used here to depict as
+a vehicle. Whenever a vehicle comes in range of the RF speed sign post, the sign
+post transmits the speed limit for that particular road to the vehicle system. The
+vehicle controller system receives this signal through RF receiver and further
+perceived by the microcontroller. The speed of the vehicle can be incremented /
+decremented manually with the help of push buttons. If the system was at lower
+speed than the limit received from the sign post than there will be no changes made
+to the speed of the system. However, if the speed of the vehicle was manually
+incremented to a higher value, then the controller will impose the speed restriction
+and bring back the speed value to the value specified by the limit. Now if the user
+tries to increase the speed, the system does not allows it to do so till it is in range of
+the RF speed sign post. The speed of the vehicle and the limits are displayed on an
+LCD. Thus this system greatly helps in curbing the speed of over speeding vehicles
+ensuring safety of vehicles on accident prone road ways.\\
+\\
+\begin{large}
+\textbf{1.3 Aim of the Project}
+\end{large}
+\newline
+\tab The main idea of a smart zone-based speed control system
+targeting the importance of road safety in crowded places.\\
+The review of the idea of automatic speed
+control of vehicles using RF transmitter and receiver
+modules
+
+
+ 
+
+\newpage
+\begin{center}
+\section{ \Large Literature Survey}
+\end{center}
+\newline
+\begin{large}
+\textbf{2.1 Related Work}
+\end{large}
+\newline
+
+ Amulya A M, et.al. [1] Intelligent vehicle speed controller: In this paper, they concentrated to avoid the collision of the vehicle due to its over speed in the speed restricted zones by automatically. This can be done through the embedded systems and the RF transmitter and receiver modules. When the vehicle enters the speed, the restricted area driver has to reduce the speed of the vehicle manually. If the driver did not slow down the vehicle, the electronic controller would take the lead to control and reduce the speed of the vehicle by receiving the signal from the transmitter in that zone. By that received signal, the Arduino microcontroller would process to give a signal to the motor to control the speed. Here mainly they use the RF transmitter and receiver to identify the restricted .\\
+ \\
+ Ankita Mishra et al. [2] worked on speed control system by the use of RF design. The main purpose
+is to design the controller for smart display which is meant for the vehicle’s speed control and to monitor the
+speed zones which have speed limits, and which can operate on an associated embedded system. Smart Display & Control(SDC) can be custom designed so that they can fit into dashboard of the vehicle, and display the information available on the vehicle.\\
+ \\
+ Gummarekula Sattibabu et al. [3] worked on control of vehicle’s speed using with wireless attached in the vehicle road
+speed limit sign. The objective is to design an Electronic Display controller that is meant for the control of the speed of the vehicle and to monitor the speed zones, which operates on an embedded system and that can be custom designed to fit into a
+vehicle’s dashboard to display
+information on the vehicle. This system if adopted by some state can effectively reduce the
+number of road accidents caused by speeding vehicles losing control of the vehicle at speed breakers or by driver’s negligence towards traffic signals.\\
+\\
+Vengadesh et al. [4] has worked on automatic speed control of automobile using the technologies such as RF and GSM. The controller is used to compare the speed. If it exceeds the limited speed value of the zone the controller send alert to the driver and controls are taken automatically. If they do not respond the message then information along with the vehicle number is transmitted to the nearest police station of that area by the use of GSM and penalty amount is collected in the nearest toll gate.\\
+\\
+ Soni Kumari et al. [5] worked on review of automatic speed control using RFID. One RFID reader is inside the vehicle which reads the RFID tag which is placed either at speed limit sign zone or at traffic light. A controlling module in vehicle then takes the decision and control the speed accordingly.\\
+\newline
+\begin{large}
+\textbf{2.2 Major Issues}
+\end{large}
+\newline
+Recent studies have shown us that the higher rate of
+major accidents on road is occurred due to high
+ungovernable speed rather than speed restricted in the zone
+and also due to ignorant obstacles. The priority for the driver
+while driving should be conscious of the particular area so
+they are aware of the obstacle in front of the road. As
+everyone is aware that road transport is a prime class of
+transport system used in India. About 1.3 million people die
+on the world's roads and 20 - 50 million gets wounded every
+year. A major cause of death is mostly due to road accidents
+among all age groups and the leading cause of death aged 5
+to 29 years. In most instances, the driver is at fault. This
+becomes more dangerous in densely populated areas like
+hospitals or schools. In some of the areas, speed bumps are
+made to create hindrance to the speed of vehicles, but the
+drivers do not lower their speeds. Several times due to the
+driver’s fault speed is not controlled. The whole system is
+being controlled by an Arduino Uno R3 as a
+microcontroller. The main cause for choosing this as a
+controller is for their benefit of having higher processing
+speed and their ability to handle multiple I/O at the same
+time without compromising the fidelity of the outputs.\\
+
+\\
+\\
+\newpage
+\begin{center}
+\section{ \Large SYSTEM ANALYSIS AND DESIGN}
+\end{center}
+
+\begin{large}
+\textbf{3.1 Proposed System}
+\end{large}
+
+\tab System includes RF receiver and transmitter modules, LCD display, Motor driver, DC motor, Arduino uno board, power supply,battery,increment/decrement buttons are interfaced together for the complete operation of the system.
+This project targets to propose a system, which detects speeding vehicles over a specific speed limit.
+\\
+\\
+\tab This system is the next step to the existing vehicle speed measures of the system because it includes the controlling of the system.  
+When the vehicle crosses the school, college or hospital areas ,if the vehicle moves with high speed which is restricted,the RF transmitter module which is kept road side sends signal to the receiver module present in vehicle unit form that to the  micro-controller.
+\\
+\\
+ The micro-controller immediately controls the driver section to control the speed of the motor. 
+Therefore when the vehicle crosses the school/College, the speed of the vehicle will be automatically decreased if the vehicle speed is over limited. 
+This will prevent unnecessary accidents.
+
+\newpage
+\begin{large}
+\textbf{3.2 Architecture Design}
+\end{large}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=15cm,height=12cm]{PIC4.jpg}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{3.2.1}
+\caption{\footnotesize Block diagram of the system }
+\end{center}
+\end{figure}\\
+
+\newpage
+\begin{large}
+\textbf{3.2.1 System Design}
+\end{large}
+
+
+ \tab At first,the RF transmitter module is connected to Arduino UNO R3.We connected all the necessary pins of the transmitter module to the
+Arduino board. All 4 pins were connected using connecting wires.
+Then we connected the 16x2 LCD display to the Arduino Board.
+This allowed us to view the speed of the vehicle and messages. All the pins
+were connected using connecting wires.
+Motor driver and DC motor are connected to the Arduino UNO board with the connecting wires which helps in controlling the speed of the vehicle.
+And also we connected the incremented/decrement buttons to the Arduino board which helps in manual increasing or decreasing of the speed.
+RF receiver module is placed on the road side connected to the battery which is used in sending the signals to the transmitter.
+\\
+\\
+When the power is on and if we increment the speed of the vehicle it will be displayed on the LCD board.
+If the speed of the vehicle over limits than speed of the transmitter module sends, the speed will be automatically reduced to the received speed and that speed will be displayed on the LCD.
+\\
+\\
+
+\newpage
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=15cm,height=12.0cm]{PIC6.jpg}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{3. 2. 2}
+\caption{\footnotesize Transmitter Module }
+\end{center}
+\end{figure}\\
+\tabIn Transmitter module consists of RF module transmitter, battery,encoder and diode.
+\newline Transmitter module consists of four switches indicates the speed restriction limits.
+\newpage
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=15cm,height=12cm]{Receiver_module.png}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{3. 2. 3}
+\caption{\footnotesize Receiver Module }
+\end{center}
+\end{figure}\\
+\tabIn Receiver module consists of RF receiver, micro-controller, motor driver, DC motor, LCD display, transformer.
+\newpage
+\begin{large}
+\textbf{3.2.2 Description of Components}
+\end{large}
+\\
+\begin{large}
+\textbf{Arduino }
+\end{large}
+\newline
+• The Arduino Uno is a microcontroller board based on the
+ATmega328 (datasheet). It has 14 digital input/output pins (of which 6 can
+be used as PWM outputs), 6 analog inputs, a 16 MHz ceramic resonator, a
+USB connection, a power jack, an ICSP header, and a reset button. It
+contains everything needed to support the microcontroller; simply connect
+it to a computer with a USB cable or power it with a AC-to-DC adapter or
+battery to get started. The Uno differs from all preceding boards in that it
+does not use the FTDI USB-to-serial driver chip. Instead, it features the
+Atmega16U2 (Atmega8U2 up to version R2) programmed as a USB-toserial converter.Revision 2 of the Uno board has a resistor pulling the 8U2
+HWB line to ground, making it easier to put into DFU mode. Revision 3
+of the board has thefollowing new features:
+\newline
+• Pin out: added SDA and SCL pins that are near to the AREF pin andtwo
+other new pins placed near to the RESET pin, the IOREF that allow the
+shields to adapt to the voltage provided from the board. In future, shields
+will be compatible both with the board that uses the AVR, which operate
+with 5V and the second one is a not connected pin that is reserved for
+future purposes.
+\newline
+• Stronger RESET circuit.
+\newline
+• At mega 16U2 replace the 8U2. "Uno" means one in Italian and is named
+to mark the upcoming release of Arduino 1.0. The Uno and version 1.0
+will be the reference versions of Arduino, moving forward. The Uno is
+the latest in a series of USB Arduino boards, and thereference model
+for the Arduino platform; for a comparison with previous versions, see the
+index of Arduino boards.
+\\
+\newline
+\begin{large}
+\textbf{Summary: }
+\end{large}\\
+ Micro-controller AT-mega328Operating Voltage 5V\\
+ Input Voltage (recommended) 7-12V Input Voltage (limits) 6-20V\\
+ Digital I/O Pins 14 (of which 6 provide PWM output)\\
+ Flash Memory 32 KB (AT-mega328) of which 0.5 KB used by boot
+loader SRAM 2KB (ATmega328)
+ EEPROM 1 KB (AT-mega328)\\
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=10cm,height=6cm]{arduino.png}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{3. 2. 4}
+\caption{\footnotesize Arduino }
+\end{center}
+\end{figure}\\
+\newline
+\begin{large}
+\textbf{LCD (liquid crystal display) }
+\end{large}
+\\
+\tabIn A liquid crystal display (LCD) is a thin, flat display device made up of any number of
+color or monochrome pixels arrayed in front of a light source or reflector. Each pixel
+consists of a column of liquid crystal molecules suspended between two transparent electrodes,
+and two polarizing filters, the axes of polarity of which are perpendicular to each other. Without
+the liquid crystals between them, light passing through one would be blocked by the other. The
+liquid crystal twists the polarization of light entering one filter to allow it to pass through the
+other.
+\newline
+Many microcontroller devices use 'smart LCD' displays to output visual information.
+LCD displays designed around LCD NT-C1611 module, are inexpensive, easy to use, and it
+is even possible to produce a readout using the 5X7 dots plus cursor of the display. They have
+a standard ASCII set of characters and mathematical symbols. For an 8-bit data bus, thedisplay
+requires a +5V supply plus 10 I/O lines (RS RW D7 D6 D5 D4 D3 D2 D1 D0). For a 4-bit
+data bus it only requires the supply lines plus 6 extra lines(RS RW D7 D6 D5 D4).When the LCD display is not enabled, data lines are tri-state and they do not interfere with
+the operation of the microcontroller.
+\\
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=12cm,height=9cm]{LCD.png}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{3. 2. 5}
+\caption{\footnotesize 16×2 LCD display}
+\end{center}
+\end{figure}\\
+\\
+\\
+\newline
+\begin{large}
+\textbf{DC Motor }
+\end{large}
+\newline
+A dc motor uses electrical energy to produce mechanical energy, very generally
+through the interaction of magnetic fields and current-containing conductors. The reverse
+process, producing electrical energy from mechanical energy, is carried out by an alternator,
+source or dynamo. Many types of electric motors can be run as sources, and vice verse. The
+input of a DC motor is current/voltage and its output is torque (speed).
+The DC motor has two basic parts: the rotating part that is called the armature and the
+stable part that includes coils of wire called the field coils. The stationary part is also called
+up the stator. Figure shows a depict of a distinctive DC motor, Figure shows a picture of a DC armature, and Figure shows a picture of a distinctive stator. From the picture you can see
+the armature is made of coils of wire wrapped around the core, and the core has an covered
+shaft that rotates on charges. You should also notice that the ends of each coil of wire on the
+armature are finished at one end of the armature. The outcome points are called the
+commutator, and this is where's brushes make electrical contact to bring electrical current from
+the stationary part to the rotating part of the machine.
+\newline
+\newline
+\begin{large}
+\textbf{Regulated Power Supply}
+\end{large}
+\newline
+Power supply is a supply of electrical power. A device or system that supplies
+electrical or other types of energy to an output load or group of loads is called a power supply unit
+or PSU. The term is most commonly applied to electrical energy supplies, less often to
+mechanical ones, and rarely to others.
+A power supply may include a power distribution system as well as primary or
+secondary sources of energy such as
+Conversion of one form of electrical power to another desired form and voltage, typically
+involving converting AC line voltage to a well-regulated lower-voltage DC for electronic
+devices. Low voltage, low power DC power supply units are commonly integrated with the
+devices they supply, such as computers and household electronics.
+\\
+• Batteries.\\
+• Chemical fuel cells and other forms of energy storage systems.\\
+• Solar power.\\
+• Generators or alternators.\\
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=15cm,height=9cm]{PIC1.jpg}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{3. 2. 6}
+\caption{\footnotesize Power Supply}
+\end{center}
+\end{figure}\\
+\begin{large}
+\textbf{Transformer}
+\end{large}
+\newline
+A transformer is a device that transfers electrical energy from one circuit to
+another through inductively coupled conductors without changing its frequency. A varying
+current in the first or primary winding creates a varying magnetic flux in the transformer's core,
+and thus a varying magnetic field through the secondary winding. This varying magnetic field
+induces a varying electromotive force (EMF) or "voltage" in the secondary winding. This effect
+is called mutual induction.\\
+If a load is connected to the secondary, an electric current will flow in the
+secondary winding and electrical energy will be transferred from the primary circuit through
+the transformer to the load. This field is made up from lines of force and has the same shape as
+a bar magnet.\\
+If the current is increased, the lines of force move outwards from the coil. If
+the current is reduced, the lines of force move inwards.\\
+If another coil is placed adjacent to the first coil then, as the field moves out or
+in, the moving lines of force will "cut" the turns of the second coil. As it does this, a voltage
+is induced in the second coil. With the 50 Hz AC mains supply, this will happen 50 times a
+second.
+\newline
+\begin{large}
+\textbf{Step Up transformer:}
+\end{large}\\
+In case of step up transformer, primary windings are every less compared to
+secondary winding.
+Because of having more turns secondary winding accepts more energy, and it
+releases more voltage at the output side.\\
+\begin{large}
+\textbf{Step Down transformer:}
+\end{large}\\
+In case of step down transformer, Primary winding induces more flux than the
+secondary winding, and secondary winding is having less number of turns because of that it
+accepts less number of flux, and releases less amount of voltage.
+\\
+\newline
+\begin{large}
+\textbf{Battery power supply:}
+\end{large}
+\newline
+A battery is a type of linear power supply that offers benefits that traditional
+line-operated power supplies lack: mobility, portability and reliability. A battery consists of
+multiple electrochemical cells connected to provide the voltage desired. Fig: 3.3.4 shows HiWatt 9V battery\\
+The most commonly used dry-cell battery is the carbon-zinc dry cell battery.
+Dry-cell batteries are made by stacking a carbon plate, a layer of electrolyte paste, and a zinc
+plate alternately until the desired total voltage is achieved. The most common dry- cell batteries
+have one of the following voltages: 1.5, 3, 6, 9, 22.5, 45, and 90. During the discharge of a
+carbon-zinc battery, the zinc metal is converted to a zinc salt in the electrolyte, and magnesium
+dioxide is reduced at the carbon electrode. These actions establish a voltage of approximately
+1.5 V.\\
+\newline
+\begin{large}
+\textbf{Rectifiers}
+\end{large}
+\newline
+A rectifier is an electrical device that converts alternating current (AC) to direct
+current (DC), a process known as rectification. Rectifiers have many uses including as
+components of power supplies and as detectors of radio signals. Rectifiers may be made of
+solid-state diodes, vacuum tube diodes, mercury arc valves, and other components.\\
+A device that it can perform the opposite function (converting DC to AC) is
+known as an inverter.\\
+When only one diode is used to rectify AC (by blocking the negative or positive
+portion of the waveform), the difference between the term diode and the termrectifier is merely
+one of usage, i.e., the term rectifier describes a diode that is being used to convert AC to DC.
+Almost all rectifiers comprise a number of diodes in a specific arrangement for more efficiently
+converting AC to DC than is possible with only one diode. Before the development of silicon
+semiconductor rectifiers, vacuum tube diodes and copper
+(I) oxide or selenium rectifier stacks were used.\\
+\newline
+\begin{large}
+\textbf{L293d Motor Driver}
+\end{large}
+\newline
+A motor driver is an integrated circuit chip which is usually used to control motors in autonomous robots. Motor driver act as an interface between Arduino and the motors . The most commonly used motor driver IC’s are from the L293 series such as L293D, L293NE, etc. These ICs are designed to control 2 DC motors simultaneously. L293D consist of two H-bridge. H-bridge is the simplest circuit for controlling a low current rated motor. We will be referring the motor driver IC as L293D only. L293D has 16 pins.\\
+The L293D is a 16 pin IC, with eight pins, on each side, dedicated to the controlling of a motor. There are 2 INPUT pins, 2 OUTPUT pins and 1 ENABLE pin for each motor. L293D consist of two H-bridge. H-bridge is the simplest circuit for controlling a low current rated motor.\\
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=9cm,height=7cm]{motor_driver.png}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{3. 2. 7}
+\caption{\footnotesize Motor Driver}
+\end{center}
+\end{figure}\\
+\begin{large}
+\textbf{3.2.3 Arduino Software}
+\end{large}
+\\
+\begin{large}
+\textbf{Arduino }
+\end{large}
+\newline
+Arduino IDE (Integrated Development Environment) is required to
+program the Arduino Uno board.
+\begin{large}
+\textbf{Programming Arduino: }
+\end{large}
+\newline
+Once Arduino IDE is installed on the computer, connect the board with
+computer using USB cable. Now open the Arduino IDE and choose the
+correct board by selecting Tools>Boards>Arduino/Genuino Uno, and
+choose the correct Port by selecting Tools>Port. Arduino Uno is
+programmed using Arduino programming language based on Wiring. To
+get it started with Arduino Uno board and blink the built-in LED, load the
+example code by selecting Files>Examples>Basics>Blink. Once the
+example code (also shown below) is loaded into your IDE, click on the
+‘upload’ button given on the top bar. Once the upload is finished, you
+should see the Arduino built-in LED blinking.\\
+\begin{large}
+\textbf{Arduino-Programming Structure }
+\end{large}
+\newline
+The Arduino program structure and we will learn more new terminologies
+used in the Arduino world. The Arduino software is open-source. The
+source code for the Java environment is released under the GPL and the
+C/C++ microcontroller libraries are under the LGPL.\\
+\begin{large}
+\textbf{Sketch-}
+\end{large}
+The first new terminology is the Arduino program called
+“sketch”. Structure Arduino programs can be divided in three main parts:
+Structure, Values (variables and constants), and Functions. In this tutorial,
+we will learn about the Arduino software program, step by step, and how
+we can write the program without any syntax or compilation error.\\
+Let us start with the Structure. Software structure consists of two main
+functions:\\
+ Setup ( ) function\\
+ Loop ( ) function\\
+ \begin{figure}[htb]
+\begin{center}
+\includegraphics[width=9cm,height=7cm]{Arduino_ide.png}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{3. 2. 8}
+\caption{\footnotesize Arduino IDE}
+\end{center}
+\end{figure}\\
+\newline
+void setup () - The setup () function is called when a sketch starts. Use it to
+initialize the variables, pin modes, start using libraries, etc. The setup
+function will only run once, after each power up.\\
+void loop () - After creating a setup () function, which initializes and sets
+the initial values, the loop () function does precisely what its name
+suggests, and loops consecutively, allowing your program to change and
+respond. Use it to actively control the Arduino board.\\
+\newpage
+\begin{large}
+\textbf{3.3 Flow Chart }
+\end{large}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=12cm,height=12cm]{PIC3.jpg}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{3. 3. 1}
+\caption{\footnotesize Flow chart}
+\end{center}
+\end{figure}\\
+
+\newpage
+
+\begin{center}
+\section{ \Large IMPLEMENTATION}
+\end{center}
+\newline
+Our target is to implement this proposed system in smart
+zones like schools, colleges, hospitals where the speed
+should be limited to 60kmph to save the life of many people.
+However speed limiters are installed in very few vehicles
+and some cases, the drivers remove the speed limiters to go
+fast on the roads. For this problem, every vehicle must be
+controlled at least in the above mentioned smart zones.
+\\
+Implementation can be done by fixing the RF
+transmitter in the zone and the
+RF receiver circuit in the vehicles. RF transmitter 
+transmits the signal to travel at the desired speed.
+\\
+\begin{large}
+\textbf{4.1 Modules }
+\end{large}
+\newline
+The modules that we using in this project are Radio Frequency (FR) Module and
+ECU remapping.\\
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=9cm,height=9cm]{Module.png}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{4.1.1}
+\caption{\footnotesize Modules}
+\end{center}
+\end{figure}\\
+\begin{large}
+\textbf{4.1.1 Radio Frequency Module }
+\end{large}
+\newline
+The RF transmitter and receiver is an easy way to communicate (one way) two devices by radio frequency. The corresponding range varies between 30 kHz & 300 GHz, in the RF communication system, The digital data is represented as variations in the amplitude of carrier wave. This modulation is known as Amplitude shifting key (ASK). These signals transmitted through radio frequency (RF) can travel long distances. So, it can be used to communicate in long-range applications. RF communication uses a specific frequency range to communicate two devices. The signals on one frequency band in RF will not interfere by other frequency RF signals. The radio frequency signals can be transmitted when any obstacles between the transmitter and receiver.\\
+\\
+In our project, we use RF modules to transmitting and receive the data because it has a high volume of applications than IR. RF signals travel in the transmitter and receiver even when there is an obstruction. It operates at a specific frequency of 433MHz.
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=13cm,height=7cm]{PIC2.jpg}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{4.1.2}
+\caption{\footnotesize RF Transmitter and Receiver Circuit Block Diagram}
+\end{center}
+\end{figure}\\
+\newline
+The HT12E encoder IC’s 4 data pins are connected to the 4 push buttons. The push buttons provide 4-bit data to the HT12E encoder IC. Then the IC converts these 4-bit data into serial data and this serial data will be available at the DOUT pin (pin17) of the IC. This output serial data is given to the RF Transmitter module. Then the RF transmitter module transmits this serial data using radio signals.
+
+At the receiver side, the RF receiver module receives this serial data coming from the transmitter. Then this serial data is given to the DIN pin (14) of the HT12D Decoder IC. Now the decoder IC will convert the received serial data into 4 bit parallel data. The 4 data pins of the decoder IC are connected to 4 LEDs, which is control according to the transmitted data from the transmitter.
+
+When we will provide Power supply to both circuits and we should notice that all LEDs will start glowing. Because the push-button pins (IC pin D8-D11) are pulled up internally by the Encoder IC. If we will press one push-button the data pin is connected to the ground in the transmitter circuit, then the respective LED will be turned off in the receiver circuit.\\
+\newline
+\begin{large}
+\textbf{4.1.2 ECU Remapping}
+\end{large}
+\newline
+Remapping, sometimes called ECU tuning, is when the settings of a car’s ‘engine control unit’ (ECU) is altered to improve several areas of the vehicle’s performance. By overwriting the existing settings with new software, the owner can re-programme the car to manage the fuel injection, airflow, sensors and more (within legal limitations).\\
+Remapping a car changes the manufacturer’s default settings and software on the ECU, replacing it with new software which can be tweaked and customised to the owner’s specifications (within legal limitations).
+
+When a vehicle is remapped, the old ECU software is overwritten when the customised software is plugged in to the car’s serial port (sometimes referred to as an OBD port). This simple functionality has made the process of tuning a vehicle considerably easier, and has created many jobs for tuning engineers and specialist ECU software developers.\\
+Remapping allows you to alter the performance of your vehicle by altering how the engine drives the car, however, it’s how the driver chooses to use the tuned car that ultimately decides what effects the ECU tuning will have.\\
+\newline
+\begin{large}
+\textbf{4.1.3 Arduino Programming Code}
+\end{large}
+\newline
+\#include \<LiquidCrystal.h\>\\
+LiquidCrystal lcd(8,9,10,11,12,13);//rs,en,data pins d4 -d7\\
+int PWM = 6;\\
+int MSD = 0;\\
+
+int a=0;\\
+int b=0;\\
+int c=0;\\
+int d=0;\\
+
+int ac=0;\\
+int aa=0;\\
+int bb=0;\\
+int cc=0;\\
+int dd=0;\\
+int ee=0;\\
+const int SW1=4; int SW1INC=1;\\  
+const int SW2=5; int SW2DEC=1;\\
+
+const int S1E=A0;\\
+const int S2E=A1;\\
+const int S3E=A2;\\
+const int S4E=A3;\\
+
+if(a==1)\\
+{\\
+if((S11E==1) & (S12E==1)  & (S13E==1) & (S14E==0))\\
+\{\\
+  dd=dd+1;\\
+if(dd==1)\\
+\{\\
+lcd.clear();\\
+lcd.setCursor(0,0);lcd.print("Over Speeding   ");\\
+lcd.setCursor(0,1);lcd.print("   Detected!!   ");\\
+delay (5000);lcd.clear();\\
+lcd.setCursor(0,0);lcd.print("Capping Speed   ");\\
+lcd.setCursor(0,1);lcd.print("   to 20mph     ");\\
+delay (5000);lcd.clear();\\
+\}\\
+if(dd>=2)\\
+\{\\
+lcd.setCursor(0,0);lcd.print("SpeedLimit:20mph");\\
+lcd.setCursor(0,1);lcd.print("Speed: 20 mph   ");\\
+MSD=120;analogWrite(PWM, MSD);delay(500);\\
+delay (3000);lcd.clear();ac=2;\\
+\}\\
+\}\\
+\}\\
+\}
+
+
+\newpage
+\begin{large}
+\textbf{4.2 Results}
+\end{large}
+\newline
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=12cm,height=12cm]{r1.png}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{4. 2. 1}
+\caption{\footnotesize Implementation}
+\end{center}
+\end{figure}\\
+\newpage
+\\
+\\
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=12cm,height=12cm]{system.jpeg}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{4. 2. 2}
+\caption{\footnotesize Overall system design}
+\end{center}
+\end{figure}\\
+\newpage
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=12cm,height=12cm]{r4.jpeg}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{4. 2. 3}
+\caption{\footnotesize Speed limit controller}
+\end{center}
+\end{figure}\\
+\newpage
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=12cm,height=12cm]{r3.jpeg}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{4. 2. 4}
+\caption{\footnotesize Over speed detected}
+\end{center}
+\end{figure}\\
+\\
+\\
+\newpage
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=12cm,height=12cm]{reducing.jpeg}
+\end{center}
+\begin{center}
+\renewcommand{\thefigure}{4. 2. 5}
+\caption{\footnotesize Final result}
+\end{center}
+\end{figure}\\
+\newpage
+\begin{center}
+\section{ \Large  CONCLUSION \& FUTURE ENHANCEMENT}
+\end{center}
+
+In this project we presented a solution to control the speed of the
+vehicle automatically using the RF signal. Here the vehicle
+speed is controlled automatically without the help of a driver
+in smart zones.
+It is an easily conveyable and cost-efficient system.
+So we notify that our idea and the review of a smart zone-based speed  control system is a relatively more reliable option to ensure safety of the  living beings.
+
+\\
+India is one of the top countries in terms of road accidents and has also proven that most of the accidents occur because of over speed at particular zones. 
+This study plays a key role in reducing the speed of the vehicle automatically and it plays major contributions towards the safety of road users. In recent studies, it has been found that the use of the vehicle speed control system can contribute a lot in minimizing the rate of accidents that occurs due to the negligence of the driver to disobeying roadside signboards in restricted zones. 
+\newpage
+\begin{large}
+\textbf{ Future Scope}
+\end{large}
+\\
+In future, we can implement using GSM and GPS to
+know the speed and location of vehicle to smart mobiles at
+home or vehicle owner and traffic police also. 
+Developed a new design to control the speed of the automobiles. In normal driving mode, we can expect other vehicles interfering nearby and possibly blocking or attenuating RF signals.In this aspect, we are going to use gps location for restricted areas
+
+\newpage
+{
+\begin{center}
+\begin{large}
+\textbf{\tab REFERENCES}
+\end{large}
+\end{center}
+}
+\vspace*{0.08in}
+\begin{normalsize}
+
+[1] Navean G V, Sathis kumar S, Vishnu Praveen S, Hari Prakash R, “Automatic Vehicle Speed Control System in a Restricted Zone”, International Journal of Scientific & Technology Research, Volume9, Issue 02 | February 2020, ISSN 2277-8616 \\
+
+[2] Phongphan Tankasem, Thaned Satiennam, Eichuda Satiennam, Pongrid Klungboonkrong, “Automated Speed Control on Urban Arterial Road: An experience from Khon Kaen City, Thailand”, Transportation Research Interdisciplinary Perspectives, Vol. 1 | June 2019 \\
+
+[3] “Automatic speed controller for automobile”, International Journal of Trend in Scientific Research and Development (IJTSRD), e-ISSN: 2456-6470, vol. 3, Issue-4 | June 2019.\\ 
+
+[4] Ashok Kumar K, Karunakar Reddy Vanga, “IoT Based Smart Zone Vehicle Speed Control”, International Journal of Recent Technology and Engineering (IJRTE) ISSN: 2277-3878, Volume-8, Issue-1 | May 2019 \\
+
+[5] Mattia Brambilla, Andrea Matera, Dario Tagliaferri, MonicaNicoli, Umberto Spagnolini
+“RF
+-Assisted Free-Space Optics for5G Vehicle-to-
+Vehicle Communications”
+InternationalConference on Communications Workshops, Shanghai, China,China, May. 20-24 2019..\\
+
+[6] Annamalai, Krubhavarshni A, Sivanikesh S R, Sathika J, Deena S, “SMART ZONE BASED SPEED CONTROL SYSTEM FOR VEHICLES”, International Research Journal of Engineering and Technology ((IRJET) e-ISSN: 2395-0056, Volume: 07 Issue: 08 | Aug 2020 \\
+
+[7] P Veera Swamy, Jannu Chaitanya, K Jaya Sai Keerthi, K Venkata Sai Kumar, K Lalitha Devi
+, K Rajesh Khanna, “RF BASED SPEED CONTROL SYSTEM FOR VEHICLES”, International Research Journal of Engineering and Technology (IRJET) e-ISSN: 2395-0056, Volume:07 Issue: 07 | July 2020 \\
+
+ 
+\end{normalsize}
+\end{document}
